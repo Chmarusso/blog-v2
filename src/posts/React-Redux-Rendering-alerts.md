@@ -1,5 +1,5 @@
 ---
-title: React/Redux - Rendering alerts 
+title: React/Redux - Rendering alerts
 date: 2017-05-07 19:37:25
 tags:
 - dajsiepoznac2017
@@ -9,11 +9,11 @@ tags:
 - javascript
 - js
 intro: Today I added Alert component to my training app (WebChatter).
-cover: /images/redux-thunk-react.jpg
+cover: ./redux-thunk-react.jpg
 ---
-Couple weeks ago I've [added to my application](/2017/04/16/Call-API-from-React-component/) an authentication form. It was working fine, but error handling was not implemented as it should (everyone would agree that `console.log` is not the very best way of letting know user about unsuccessful login attempt). I decided to fix this by introducing to my application new React component that is responsible for rendering errors and notices to users. 
+Couple weeks ago I've [added to my application](/2017/04/16/Call-API-from-React-component/) an authentication form. It was working fine, but error handling was not implemented as it should (everyone would agree that `console.log` is not the very best way of letting know user about unsuccessful login attempt). I decided to fix this by introducing to my application new React component that is responsible for rendering errors and notices to users.
 
-The component is pretty straightforward and it looks like this: 
+The component is pretty straightforward and it looks like this:
 ```jsx
 import React, { PropTypes } from 'react'
 import { Alert } from 'antd';
@@ -37,9 +37,9 @@ export default class AlertMessage extends React.Component {
 }
 ```
 
-If a component receives `alertType` prop equal to anything other than null then it renders `Alert` component from Ant package. When `alertType` is null no alert should be shown. 
+If a component receives `alertType` prop equal to anything other than null then it renders `Alert` component from Ant package. When `alertType` is null no alert should be shown.
 
-I decided to keep alert data in dedicated Redux store: 
+I decided to keep alert data in dedicated Redux store:
 ```javascript
 import { compose, createStore, applyMiddleware, combineReducers } from 'redux';
 import thunkMiddleware from 'redux-thunk';
@@ -83,7 +83,7 @@ export const clearAlert = () => ({
   type: RENDER, alertType: null, message: null
 });
 ```
-Now we can write a new reducer: 
+Now we can write a new reducer:
 ```javascript
 import Immutable from 'immutable';
 
@@ -101,7 +101,7 @@ export default function alertReducer($$state = $$initialState, action = null) {
 
     case actionTypes.RENDER: {
       return $$state.merge({
-        alertType: alertType, 
+        alertType: alertType,
         message: message
       });
     }
@@ -179,7 +179,7 @@ export default class BaseLayout extends BaseComponent {
 }
 ```
 
-I want to render alerts on successful or failure login, so I will refactor `currentUserActionCreator` a bit: 
+I want to render alerts on successful or failure login, so I will refactor `currentUserActionCreator` a bit:
 ```javascript
 import { LOGIN, LOGOUT } from '../constants/currentUserConstants';
 import { RENDER, CLEAR } from '../constants/alertConstants';

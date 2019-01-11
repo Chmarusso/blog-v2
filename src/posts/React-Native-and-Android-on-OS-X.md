@@ -8,7 +8,7 @@ tags:
 - js
 - android
 intro: In this article, I will show you how to start developing Android apps on your Mac.
-cover: /images/react-native-android.jpg
+cover: ./react-native-android.jpg
 ---
 Setting up React Native to work with a simulator for iOS apps on Mac is working almost out of the box. However, the configuration of Android simulator is a bit tricky. I followed official tutorials, but for some reason, my simulator was not working. In this article, I will guide you how I started developing Android apps on my Mac. I hope this post will be helpful for React Native rookies and save some of their time.
 

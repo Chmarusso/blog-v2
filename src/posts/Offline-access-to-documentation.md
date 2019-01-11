@@ -7,7 +7,7 @@ tags:
 - dash
 - learning
 intro: Are you working from bus/train/airport or any other place where the Internet is limited? Prepare for such occasions and keep your offline docs on your machine.
-cover: /images/offline-docs.png
+cover: ./offline-docs.png
 ---
 Are you working from bus/train/airport or any other place where the Internet is limited? Prepare for such occasions and keep your offline docs on your machine.
 

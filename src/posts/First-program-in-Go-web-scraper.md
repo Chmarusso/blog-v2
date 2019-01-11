@@ -7,7 +7,7 @@ tags:
 - Go
 - Golang
 intro: I've heard many positive opinions about Golang, so I decided to give it a try and write the first program.
-cover: /images/golang1.jpg
+cover: ./golang1.jpg
 ---
 
 Golang is an open source compiled and statically typed language created by Google. My first impression is that syntax is very similar to C but little more readable. If you want to learn more about Golang or even write some code in your browser just go to https://tour.golang.org .

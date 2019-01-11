@@ -7,7 +7,7 @@ tags:
 - ssl
 - server
 intro: Short tutorial describing how to setup SSL on Nginx without spending a dime on it.
-cover: /images/letsencrypt.jpg
+cover: ./letsencrypt.jpg
 ---
 Since the beginning of this year, Chrome browser is labeling all websites without SSL protection as non-secure. Of course, it is not applied to static pages, but for websites with any forms that are posted through the wire, it is highly recommended. Luckily the whole process is really simple and it is not expensive, as we can issue free of charge certificates using https://letsencrypt.org.
 

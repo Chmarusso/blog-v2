@@ -10,9 +10,9 @@ tags:
 - javascript
 - js
 intro: Today I learned how to call API endpoint and dispatch action with results using redux and redux-thunk.
-cover: /images/redux-thunk-react.jpg
+cover: ./redux-thunk-react.jpg
 ---
-I have [authentication endpoint](/2017/03/29/Rails5-simple-authentication-endpoint/) and [login form](/2017/03/25/Restrict-access-to-routes-using-React-React-Route-and-Redux/) in React component. Now I want to connect those two elements. Form credentials should be sent to authentication endpoint once a user clicks submit button. When API respond with success response I want to log the user in.  
+I have [authentication endpoint](/2017/03/29/Rails5-simple-authentication-endpoint/) and [login form](/2017/03/25/Restrict-access-to-routes-using-React-React-Route-and-Redux/) in React component. Now I want to connect those two elements. Form credentials should be sent to authentication endpoint once a user clicks submit button. When API respond with success response I want to log the user in.
 
 From client app we need to call API endpoint. For such operations I decided to use `axios` library:
 ```
@@ -47,12 +47,12 @@ const FormItem = Form.Item;
 
 export default class LoginForm extends React.Component {
 
-  constructor(props, _railsContext) {   
+  constructor(props, _railsContext) {
     super(props);
    this.state = {
       email: '',
       password: ''
-    };    
+    };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
@@ -69,7 +69,7 @@ export default class LoginForm extends React.Component {
     this.setState({
       [name]: value
     });
-  }  
+  }
 
   render() {
     return (

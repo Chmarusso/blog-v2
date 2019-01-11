@@ -7,7 +7,7 @@ tags:
 - ipb
 - docker
 intro: My approach for converting Invision Power Board 4 database to Discourse.
-cover: /images/ipb4-to-discourse.jpg
+cover: ./ipb4-to-discourse.jpg
 ---
 Discussion boards are not as popular as they used to be. I remember the times when my [IPB board](https://forum.mmorpg.org.pl) had 200-300 users online, and dozens of exciting topics published a day. Right now the trend is that people are moving to Facebook groups, Reddit, Discords, and other social platforms. As my board is not as popular as it used to be, I decided to switch from IPB to [Discourse](https://www.discourse.org/). I do not feel confident in Invision Power Board ecosystem as I'm not a PHP developer anymore. However, that is not the main reason why I've decided to give Discourse a chance.
 

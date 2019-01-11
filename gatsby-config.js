@@ -65,6 +65,13 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-remark-copy-linked-files`,
+    {
+      resolve: `gatsby-remark-images`,
+      options: {
+        maxWidth: 930,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -6,7 +6,7 @@ tags:
 - nodejs
 - servers
 intro: Learn how easily you can expose server from your development machine to other people without deploying code to the external server.
-cover: /images/ngrok-expose.jpg
+cover: ./ngrok-expose.jpg
 ---
 Learn how easily you can expose server from your development machine to other people without deploying code to the external server.
 

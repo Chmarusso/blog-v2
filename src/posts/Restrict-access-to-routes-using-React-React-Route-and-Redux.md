@@ -9,7 +9,7 @@ tags:
 - react
 - react-router
 intro: Simple approach for authentication check before rendering components.
-cover: /images/authentication-react-router-redux.jpg
+cover: ./authentication-react-router-redux.jpg
 ---
 Today I want to learn how to allow access to specific routes only for authenticated users. In my application, I'm using react, react-router and redux. Let's see how those three libraries combined may be used for the creation of simple authentication system.
 

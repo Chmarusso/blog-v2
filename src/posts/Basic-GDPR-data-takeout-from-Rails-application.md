@@ -6,7 +6,7 @@ tags:
 - rails
 - ruby
 intro: Ruby class for export any of your user personal data to the ZIP archive.
-cover: /images/gdpr-rails-applicaton.jpg
+cover: ./gdpr-rails-applicaton.jpg
 ---
 General Data Protection Regulation (GDPR) is a public regulation in EU law on data protection. I do not want to go too much into the details of it, because I am not a lawyer, but as you might know, the regulation obligates data processor/controller to provide access (upon request) to personal data that you are processing. That means that each user of your Rails application may ask you anytime for access to her/his data and you need to provide it within 14 days. As an owner of a website I already received such requests, so I decided to write some Ruby class that will help me save some time.
 

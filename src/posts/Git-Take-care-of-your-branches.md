@@ -4,7 +4,7 @@ date: 2017-07-01 18:52:46
 tags:
 - git
 intro: Keeping git log in a good shape is not easy. Feature branches may become little messy, but I've got few tips for you.
-cover: /images/git-branches.jpg
+cover: ./git-branches.jpg
 ---
 Commit messages are not only you - they are mainly for your colleagues and anyone who will work with your code in the future. That is the reason why we all should care about what we are communicating in each single message. After some period of time "bug fix" or "new feature" means nothing, so make sure that your commits are clear and they are actually telling the truth about changes that you committed. Keeping git log in a good shape is not an easy task, especially when you are trying to fix some nasty bug overnight. Git was made for programmers, so it has some built-in tools that are really helpful when it comes to managing your feature branch log. In this article, I will try to present you some common situations when our feature branches may become little messy and how to avoid them.
 

@@ -6,7 +6,7 @@ tags:
 - node.js
 - js
 intro: If you want to start blogging and you are scared of monsters like Wordpress this post is for you. Inside you can find introduction to Hexo - blazing fast blog framework written in Node.js
-cover: /images/lets-start.jpg
+cover: ./lets-start.jpg
 ---
 I always wanted to have my own technical blog. As an IT guy I started from searching for a proper tool that will help me in my everyday (hope so) blogging.
 In order to choose proper tool wisely we need to have clear requirements and
@@ -76,7 +76,7 @@ I always wanted to have my own technical blog.
 ```
 Now we need to re-create files, restart server and our first post is finally published. The only problem is, that nobody can read our blog and give us feedback that we did really great job. Good blogs usually are published on publicly accessible servers, so everyone with Internet access can read them. Our blog is good, so that means that now it is a deployment time.
 
-### Deploy blog to your production server  
+### Deploy blog to your production server
 
 Hexo offers various ways of deployment. We can publish blog on Github, deploy straight to cloud services (Heroku/S3), Rsync with server or just send files over FTP. For testing purposes I decided to go with the simplest approach and publish my blog using FTP. To do that we need FTP deploy plugin:
 ``` bash

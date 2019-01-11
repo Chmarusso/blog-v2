@@ -7,7 +7,7 @@ tags:
 - dajsiepoznac2017
 - getnoticed
 intro: If your app is interacting with Facebook pages you probably need a permanent access token.
-cover: /images/fb-permanent-token.jpg
+cover: ./fb-permanent-token.jpg
 ---
 One of my websites has integration with Facebook. By integration, I mean that each single post submitted to the database is automatically published to the Facebook page. In order to publish anything on FB page using API, you need to have a valid access token. Facebook documentation is pretty straightforward on that topic and you should not have any troubles with obtaining the token. Problem is that those tokens are valid for 3 months which for me is not enough. Let's find out how we can generate a permanent and non-expiring token.
 

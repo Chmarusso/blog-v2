@@ -8,7 +8,7 @@ tags:
 - dajsiepoznac2017
 - getnoticed
 intro: My training app (React/Redux) requires authentication and I decided to develop its backend using Rails5.
-cover: /images/rails5-auth.jpg
+cover: ./rails5-auth.jpg
 ---
 Ruby on Rails have some really nice gems ([devise](https://github.com/plataformatec/devise)) to handle authentication, but I've decided to develop something from scratch. Maybe it would be useful for some Rails cadets.
 

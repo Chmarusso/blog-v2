@@ -6,11 +6,11 @@ tags:
 - getnoticed
 - motivation
 intro: WebChatter is a live chat app written in Ruby on Rails and React.
-cover: /images/web-chatter.jpg
+cover: ./web-chatter.jpg
 ---
 As I wrote on previous post, I’m participating in Get Noticed contest. The purpose of this contest is to create open source project and blog about it. I came up with idea that I want to create live chat widget that can be easily embedded on any webpage.
 
-I know that developing live chat widget may be little too much for the beginning, but I’m excited about this idea and I hope that this excitement will drive me into right direction.  
+I know that developing live chat widget may be little too much for the beginning, but I’m excited about this idea and I hope that this excitement will drive me into right direction.
 
 ### What stack?
 Backend for this app will be based on Rails 5. On the client side I want to use some kick-ass JS tools like React, Redux, ActionCable, Webpack and maybe something else (as you may know, every day brings something new and interesting to JS world so I don’t want to limit myself too much in that matter).

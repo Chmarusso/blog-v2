@@ -7,7 +7,7 @@ tags:
 - serverless
 - aws lambda
 intro: Learn how to deploy NodeJS function to AWS Lambda using Serverless framework.
-cover: /images/serverless-node-js.jpg
+cover: ./serverless-node-js.jpg
 ---
 [Serverless](https://serverless.com/) framework allows deploying any NodeJS function to AWS Lambda. This means that within a couple of minutes you are able to deploy code from your terminal to Amazon servers. Serverless will take care of everything and generate URL of ready to use endpoint. You can focus on writing code and do not spend (or waste... 😅) time on infrastructure related stuff. All you need to do is provide your AWS credentials and do some initial configuration. The entire process is very well described [here](https://serverless-stack.com/chapters/create-an-aws-account.html).
 

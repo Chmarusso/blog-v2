@@ -9,7 +9,7 @@ tags:
 - backup
 - rsnapshot
 intro: There are only two types of people in the world. Those who are doing regular backups and those who will start doing it someday.
-cover: /images/rsnapshot-backups.jpg
+cover: ./rsnapshot-backups.jpg
 ---
 There are only two types of people in the world. Those who are doing regular backups and those who will start doing it someday. Some host companies are offering automatical backup services, but I decided to choose "hacker way" and I bought dedicated VPS server ([$5/month](https://portal.hosthatch.com/aff.php?aff=745)) for backup purposes. One friend of mine recommended me Rsnapshot which is an incremental backup tool that uses a power of Rsync and SSH.
 

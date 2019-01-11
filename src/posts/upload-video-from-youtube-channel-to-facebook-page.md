@@ -8,7 +8,7 @@ tags:
 - facebook
 - youtube
 intro: Easy solution for automatic Facebook video uploads in Ruby.
-cover: /images/upload-facebook.jpg
+cover: ./upload-facebook.jpg
 ---
 I am owner of YouTube channel and Facebook Page. One day I caught up myself that I’m uploading same file to YouTube and Facebook. I don’t like to waste my time, so I decided to automate this task. I know that it is possible to upload file just to YouTube and then simply share link to it on FB, but it wasn’t my goal - wanted video to be uploaded straight into Facebook Video library. Enough talking, let’s start coding.
 
@@ -54,7 +54,7 @@ URL we received from YT is temporarily available and it might be used only from 
 
 ### Upload file to Facebook Page
 
-I don't want to write upload logic completely from scratch, so I decided to use [(koala gem)](https://github.com/arsduo/koala), which really helps in dealing with Facebook Graph API.  
+I don't want to write upload logic completely from scratch, so I decided to use [(koala gem)](https://github.com/arsduo/koala), which really helps in dealing with Facebook Graph API.
 ``` ruby
 module Facebook
   class AddYtVideo

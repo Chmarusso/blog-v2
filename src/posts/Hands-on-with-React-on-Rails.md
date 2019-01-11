@@ -10,7 +10,7 @@ tags:
 - webpack
 - react
 intro: Let's check if React and Ruby on Rails is a magnificent combination.
-cover: /images/handson-react-on-rails.jpg
+cover: ./handson-react-on-rails.jpg
 ---
 Some time ago I decided to learn React. I started with watching some videos on YouTube, then did course on CodeSchool and finally started working on small side project (comment system with replies, up/down voting, reporting and pagination). First I was really excited about whole React ecosystem, but then I realized that my JS knowledge is really outdated and I need to catch up with some of JS novelties ASAP.
 
