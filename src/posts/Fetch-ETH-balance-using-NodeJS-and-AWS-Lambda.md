@@ -13,7 +13,9 @@ cover: ./serverless-node-js.jpg
 
 Once we have [serverless](https://serverless.com/) installed and configured we can actually focus on the implementation of our endpoint. Today I want to have an endpoint which will return me an ETH balance for given address. There are a many Ethereum JS clients, but I decided to use [ethers.js](https://github.com/ethers-io/ethers.js/) . [Web3](https://github.com/ethereum/web3.js/) is a more popular one, but for some reason, it was not working on AWS Lambda (locally I had no problems, but deployed function was throwing weird error `module initialization error: Error`).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WCsmH4u0-x8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="resp-container">
+<iframe class="resp-iframe" src="https://www.youtube.com/embed/WCsmH4u0-x8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
 
 Here is a basic implementation of my lib which connects through Infura to the Etherum network:
 ```javascript
