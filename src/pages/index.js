@@ -3,17 +3,34 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import Img from 'gatsby-image'
 
 const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    {data.allMarkdownRemark.edges.map(({ node }) => (
-      <div key={node.id}>
-        <Link to={node.fields.slug}>
-          <h3>{node.frontmatter.title}</h3>
+    <section className="mw7 center">
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <article key={node.id} className="bb b--black-10">
+        <Link to={node.fields.slug} className="db pv4 ph3 ph0-l no-underline black dim">
+          <div className="flex flex-column flex-row-ns">
+            <div className="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+              <Img
+                className='db ba b--black-10'
+                sizes={node.frontmatter.cover.childImageSharp.fixed}
+                alt='Blog post cover'
+              />
+            </div>
+            <div className="w-100 w-60-ns pl3-ns">
+              <h1 className="f3 mt0 lh-title">{node.frontmatter.title}</h1>
+              <p className="f6 f5-l lh-copy">{node.frontmatter.intro}</p>
+              <p class="f6 lh-copy mv0 light-purple">{node.frontmatter.date}</p>
+            </div>
+          </div>
         </Link>
-      </div>
-    ))}
+        </article>
+      ))}
+    </section>
+
   </Layout>
 )
 
@@ -26,7 +43,16 @@ export const query = graphql`
           id
           frontmatter {
             title
+            intro
             date(formatString: "DD MMMM, YYYY")
+            cover {
+              publicURL
+              childImageSharp {
+                fixed(width: 327, height: 167, quality: 80) {
+                  srcSet, aspectRatio, src
+                }
+              }
+            }
           }
           fields {
             slug

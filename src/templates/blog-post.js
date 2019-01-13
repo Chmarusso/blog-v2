@@ -4,9 +4,8 @@ import Layout from "../components/layout"
 import SEO from '../components/seo'
 import Img from 'gatsby-image'
 
-export default ({ data, pageContext }) => {
+export default ({ data }) => {
   const post = data.markdownRemark
-  console.log(post.frontmatter.cover.childImageSharp.sizes)
   return (
     <Layout>
       <SEO
@@ -14,11 +13,11 @@ export default ({ data, pageContext }) => {
         keywords={post.frontmatter.tags}
         description={post.frontmatter.intro}
       />
-      <div>
-        <h1>{post.frontmatter.title}</h1>
+      <article className="pa3">
+        <h1 className="f2">{post.frontmatter.title}</h1>
         <Img sizes={post.frontmatter.cover.childImageSharp.sizes} />
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
+        <p className="lh-copy mt3" dangerouslySetInnerHTML={{ __html: post.html }} />
+      </article>
     </Layout>
   )
 }
