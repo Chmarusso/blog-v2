@@ -3,9 +3,16 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from '../components/seo'
 import Img from 'gatsby-image'
+import { DiscussionEmbed } from "disqus-react"
 
 export default ({ data }) => {
   const post = data.markdownRemark
+  const disqusShortname = "arturchmaro";
+  const disqusConfig = {
+    identifier: post.slug,
+    title: post.frontmatter.title,
+  }
+
   return (
     <Layout>
       <SEO
@@ -17,6 +24,9 @@ export default ({ data }) => {
         <h1 className="f2">{post.frontmatter.title}</h1>
         <Img sizes={post.frontmatter.cover.childImageSharp.sizes} />
         <p className="lh-copy mt3" dangerouslySetInnerHTML={{ __html: post.html }} />
+        <p>
+          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+        </p>
       </article>
     </Layout>
   )
