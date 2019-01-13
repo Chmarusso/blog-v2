@@ -1,8 +1,9 @@
-import { Link } from 'gatsby'
+import { Link, graphql, StaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
+import Img from 'gatsby-image'
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, data }) => (
   <div
     className='avenir'
     style={{
@@ -15,7 +16,20 @@ const Header = ({ siteTitle }) => (
         padding: `1.45rem 1.0875rem`,
       }}>
       <div class="mr2">
-        <img src="http://tachyons.io/img/logo.jpg" class="br-100 pa1 ba b--black-10 h3 w3" alt="avatar" />
+      <StaticQuery
+        query={graphql`
+          query {
+            avatar: file(relativePath: { eq: "artur-avatar.jpg" }) {
+              childImageSharp {
+                fluid(maxWidth: 64, maxHeight: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        `}
+        render={data => <Img fluid={data.avatar.childImageSharp.fluid} className="br-100 pa1 ba b--black-10 h3 w3" />}
+      />
       </div>
       <div class="w-75 mr2">
         <h1 className='ma0 pa0 mt1'>
