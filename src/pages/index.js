@@ -7,7 +7,7 @@ import Img from 'gatsby-image'
 
 const IndexPage = ({data}) => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Full Stack blog (Ruby, React, Javascript)" keywords={[`blog`, `ruby`, `react`, `blockchain`, `javascript`]} />
     <section className="mw7 center">
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <article key={node.id} className="bb b--black-10">
