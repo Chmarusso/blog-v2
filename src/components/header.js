@@ -21,7 +21,7 @@ const Header = ({ siteTitle, data }) => (
           query {
             avatar: file(relativePath: { eq: "artur-avatar.jpg" }) {
               childImageSharp {
-                fluid(maxWidth: 64, maxHeight: 64) {
+                fluid(maxWidth: 64, maxHeight: 64, quality: 80) {
                   ...GatsbyImageSharpFluid
                 }
               }
