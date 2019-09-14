@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Artur Chmaro`,
-    description: `Blog about programming and web technologies (Ruby, React, Blockchain).`,
+    title: `FullStak`,
+    description: `Podcast i blog dla rasowych full-stack developerów.`,
     author: `@ArtiChmaro`,
   },
   plugins: [
@@ -84,6 +84,20 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-135136339-1",
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+        // Avoids sending pageview hits from custom paths
+      },
+    },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

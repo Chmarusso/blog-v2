@@ -13,9 +13,18 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
 
-    const date = moment(node.frontmatter.date).format('YYYY/MM/DD')
-    const path = createFilePath({ node, getNode, basePath: `posts`})
-    const slug = `/${date}${path}`
+    let slug, path
+
+    if(node.frontmatter.category === 'podcast') {
+      path = createFilePath({ node, getNode, basePath: `posts`})
+      slug = `/${node.frontmatter.episode}`
+    } else {
+      const date = moment(node.frontmatter.date).format('YYYY/MM/DD')
+      path = createFilePath({ node, getNode, basePath: `posts`})
+      slug = `${path}`
+    }
+
+
 
     createNodeField({
       node,
@@ -32,6 +41,9 @@ exports.createPages = ({ graphql, actions }) => {
       allMarkdownRemark {
         edges {
           node {
+            frontmatter {
+              category
+            }
             fields {
               slug
             }
@@ -41,9 +53,17 @@ exports.createPages = ({ graphql, actions }) => {
     }
   `).then(result => {
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      let template
+
+      if(node.frontmatter.category === 'podcast') {
+        template = path.resolve(`./src/templates/podcast-post.js`)
+      } else {
+        template = path.resolve(`./src/templates/blog-post.js`)
+      }
+
       createPage({
         path: node.fields.slug,
-        component: path.resolve(`./src/templates/blog-post.js`),
+        component: template,
         context: {
           // Data passed to context is available
           // in page queries as GraphQL variables.
