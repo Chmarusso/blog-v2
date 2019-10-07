@@ -1,10 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: `FullStak`,
-    description: `Podcast i blog dla rasowych full-stack developerów.`,
+    description: `Podcast i blog o full stack webie.`,
     author: `@ArtiChmaro`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

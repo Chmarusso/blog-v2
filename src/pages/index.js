@@ -10,7 +10,7 @@ import 'moment/locale/pl'
 
 const IndexPage = ({data}) => (
   <Layout>
-    <SEO title="FullStak - podcast i blog" keywords={[`blog`, `ruby`, `react`, `blockchain`, `javascript`]} />
+    <SEO title="FullStak - podcast i blog" keywords={[`programowanie`, `kursy`, `blog`, `ruby`, `react`, `blockchain`, `javascript`]} />
     <section className="mw7 center">
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <article key={node.id} className="bb b--black-10">

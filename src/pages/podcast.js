@@ -1,32 +1,34 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import React from 'react'
+import { Link } from 'gatsby'
+import Img from 'gatsby-image'
+import moment from 'moment'
+import 'moment/locale/pl'
+
+import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { DiscussionEmbed } from "disqus-react"
-import "./podcast.scss"
 
-export default ({ data }) => {
-  const post = data.markdownRemark
-  const disqusShortname = 'fullstak';
-  const disqusConfig = {
-    identifier: post.slug,
-    title: post.frontmatter.title,
-  }
+const PodcastPage = ({data}) => (
+  <Layout>
+    <SEO
+      title="Podcast"
+      keywords={["podcast", "programowanie", "backend", "frontend", "javascript"]}
+      description="Rozmowy o front-endzie i back-endzie w aplikacjach Webowych"
+    />
+    <article className="pa3 podcastPost">
+      <h1>Podcast FullStak</h1>
+      <div className="lh-copy mt3">
+      <p>
+        Tutaj znajdziesz wszystkie audycje jakie do tej pory udało mi się nagrać.
+        Podcast skierowany jest do wszystkich zainteresowanych tworzeniem aplikacji webowych.
+        Tematyka oraz formuła programu nie jest jeszcze do końca sprecyzowana, ale
+        głównie staram się rozmawiać ze swoimi gośćmi o ciekawych technologiach i
+        nowych podejściach w budowaniu zarówno front-endu jak i back-endu.
+      </p>
+      </div>
 
-  return (
-    <Layout>
-      <SEO
-        title={post.frontmatter.title}
-        keywords={post.frontmatter.tags}
-        description={post.frontmatter.intro}
-        cover={post.frontmatter.full_cover.publicURL}
-      />
-      <article className="pa3 podcastPost">
-        <h1>{post.frontmatter.title}</h1>
-        <iframe title="Słuchaj nagrania ze strony" src={post.frontmatter.anchorfm} width="100%" frameborder="0" scrolling="no"></iframe>
-        <p class="tc"><b>Posłuchaj rozmowy</b></p>
+      <p class="tc"><b>Wszystkie odcinki czekają do odsłuchu na Twojej ulubionej platformie:</b></p>
         <div className="channels">
-          <a rel="noopener noreferrer" target="_blank" class="no-underline near-white bg-animate bg-red hover-bg-light-red inline-flex items-center ma2 tc br2 pa2" href={`https://www.youtube.com/watch?v=${post.frontmatter.youtube}`} title="YouTube">
+          <a rel="noopener noreferrer" target="_blank" class="no-underline near-white bg-animate bg-red hover-bg-light-red inline-flex items-center ma2 tc br2 pa2" href={`https://www.youtube.com/playlist?list=PLOzzvlJKwOdXwE5LER7oZ2Ce65MDaB-u0`} title="YouTube">
             <svg class="dib h2 w2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" fill-rule="nonzero"/></svg>
             <span class="f6 ml3 pr2">YouTube</span>
           </a>
@@ -45,62 +47,60 @@ export default ({ data }) => {
             <span class="f6 ml3 pr2">Google</span>
           </a>
         </div>
-        <div className="lh-copy mt3" dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
-
-<div className="pa4-l">
-  <form class="newsletterBox mw7 center pa4 br2-ns ba b--black-10" action="https://gmail.us20.list-manage.com/subscribe/post?u=cd9534d13c2fcd4e20e32977c&amp;id=55b16eeb45" method="post" name="mc-embedded-subscribe-form" target="_blank">
-    <fieldset className="cf bn ma0 pa0">
-      <legend className="pa0 f5 f4-ns mb3 b">Nie przegap nowych materiałów i zapisz się na Newsletter!</legend>
-      <div className="cf">
-        <label className="clip" for="email-address">Email Address</label>
-        <input className="f6 f5-l input-reset bn fl black-80 bg-white pa3 w-100 w-75-m w-80-l br2-ns br--left-ns" name="EMAIL" id="mce-EMAIL" placeholder="Twój adres e-mail" required />
-        <div style={{position: 'absolute', left: '-5000px'}}><input type="text" name="b_cd9534d13c2fcd4e20e32977c_55b16eeb45" tabindex="-1" value="" /></div>
-        <input className="f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black white pointer w-100 w-25-m w-20-l br2-ns br--right-ns" type="submit" value="Subskrybuj" />
-      </div>
-    </fieldset>
-    <div><br/>Z newslettera w każdej chwili można się bardzo łatwo wypisać. Wystarczy w stopce wiadomości kliknąć w link i już nigdy nie otrzymasz kolejnej wiadomości. Jeżeli interesuje Cię polityka prywatności oraz sprawy związane z tzw. RODO to zapraszam pod <a href="/privacy-policy-cookies">ten link</a>.
-</div>
-  </form>
-
-</div>
-
-        <div>
-          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
-        </div>
-      </article>
-    </Layout>
-  )
-}
+    </article>
+    <section className="mw7 center">
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <article key={node.id} className="bb b--black-10">
+        <Link to={node.fields.slug} className="db pv4 ph3 ph0-l no-underline black dim">
+          <div className="flex flex-column flex-row-ns">
+            <div className="pr3-ns mb4 mb0-ns w-100 w-40-ns">
+              <Img
+                className='db ba b--black-10'
+                sizes={node.frontmatter.cover.childImageSharp.fixed}
+                alt='Blog post cover'
+              />
+            </div>
+            <div className="w-100 w-60-ns pl3-ns">
+              <h1 className="f3 mt0 lh-title">{node.frontmatter.title}</h1>
+              <p className="f6 f5-l lh-copy">{node.frontmatter.intro}</p>
+              <p className="f6 lh-copy mv0 light-purple">{moment(node.frontmatter.date).format('LL')}</p>
+            </div>
+          </div>
+        </Link>
+        </article>
+      ))}
+    </section>
+  </Layout>
+)
 
 export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title,
-        intro,
-        tags,
-        date,
-        youtube,
-        anchorfm,
-        full_cover {
-          publicURL
-          childImageSharp {
-            sizes(maxWidth: 930 ) {
-              srcSet, aspectRatio, src, sizes
+  query {
+    allMarkdownRemark(filter: { frontmatter: { category: { eq: "podcast"}} }, sort: { fields: [frontmatter___date], order: DESC }) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            intro
+            date(formatString: "DD MMMM, YYYY")
+            cover {
+              publicURL
+              childImageSharp {
+                fixed(width: 327, height: 167, quality: 80) {
+                  srcSet, aspectRatio, src
+                }
+              }
             }
           }
-        },
-        cover {
-          publicURL
-          childImageSharp {
-            sizes(maxWidth: 930 ) {
-              srcSet, aspectRatio, src, sizes
-            }
+          fields {
+            slug
           }
+          excerpt
         }
       }
     }
   }
 `
+
+export default PodcastPage

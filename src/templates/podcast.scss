@@ -1,0 +1,41 @@
+.newsletterBox {
+  background: linear-gradient(0deg, rgb(89, 54, 252) 0%, rgb(136, 71, 253) 100%);
+  color: #f6fffe;
+
+  legend {
+    color: #fff;
+  }
+
+  a {
+    color: #fff;
+    font-style: italic;
+  }
+}
+
+.lh-copy{
+  a {
+    color: #357edd;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.podcastPost {
+  .channels {
+    flex-wrap: wrap;
+    display: flex;
+    place-content: space-between;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .channels {
+      a {
+        width: 100%;
+      }
+    }
+  }
+}
+
