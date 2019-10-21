@@ -24,7 +24,13 @@ function SEO({ description, lang, meta, keywords, title, cover }) {
               },
               {
                 name: `og:image`,
+                property: `og:image`,
                 content: `https://fullstak.pl${cover}`,
+              },
+              {
+                name: `author`,
+                property: `article:author`,
+                content: `Artur Chmaro`,
               },
               {
                 name: `description`,
