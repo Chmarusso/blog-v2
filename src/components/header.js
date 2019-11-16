@@ -39,8 +39,8 @@ const Header = ({ siteTitle, data }) => {
         </div>
       </div>
       <div className='opener' onClick={() => setMobileOpen(!mobileOpen)}>
-        {mobileOpen && <img src={CloseIcon} />}
-        {!mobileOpen && <img src={MenuIcon} />}
+        {mobileOpen && <img src={CloseIcon} alt="close mobile menu icon" />}
+        {!mobileOpen && <img src={MenuIcon} alt="open mobile menu icon" />}
       </div>
     </div>
   </div>)

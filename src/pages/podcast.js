@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import moment from 'moment'
-import 'moment/locale/pl'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -63,7 +61,7 @@ const PodcastPage = ({data}) => (
             <div className="w-100 w-60-ns pl3-ns">
               <h1 className="f3 mt0 lh-title">{node.frontmatter.title}</h1>
               <p className="f6 f5-l lh-copy">{node.frontmatter.intro}</p>
-              <p className="f6 lh-copy mv0 light-purple">{moment(node.frontmatter.date).format('LL')}</p>
+              <p className="f6 lh-copy mv0 light-purple">{node.frontmatter.date}</p>
             </div>
           </div>
         </Link>
@@ -83,7 +81,7 @@ export const query = graphql`
           frontmatter {
             title
             intro
-            date(formatString: "DD MMMM, YYYY")
+            date(locale: "pl", formatString: "LL")
             cover {
               publicURL
               childImageSharp {
