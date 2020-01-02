@@ -623,3 +623,7 @@ pre tt:after {
   height: 100%;
   border: 0;
 }
+
+.loginBtns a {
+  text-decoration: none;
+}
