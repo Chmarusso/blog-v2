@@ -54,12 +54,12 @@ export default ({ data }) => {
               <legend className="pa0 f5 f4-ns mb3 b">Zapisz się na Newsletter!</legend>
               ✅ Zero spamu
               <br/>✅ Tylko dobre materiały (React, JS, Web UX/UI)
-              <br/>✅ W każdej chwili możesz się wypisać
+              <br/>✅ Rezygnacja w każdej chwili
               <br/><br/>
               <div className="cf">
                 <label className="clip" for="email-address">Email Address</label>
-                <input className="f6 f5-l input-reset bn fl black-80 bg-white pa3 w-100 w-50-m w-30-l br2-ns br--left-ns" name="FNAME" id="mce-FNAME" placeholder="Twoje imię" />
-                <input className="f6 f5-l input-reset bn fl black-80 bg-white pa3 w-100 w-50-m w-50-l br2-ns br--right-ns" name="EMAIL" id="mce-EMAIL" placeholder="Twój adres e-mail" required />
+                <input className="mb2 f6 f5-l input-reset bn fl black-80 bg-white pa3 w-100 w-50-m w-30-l br2-ns br--left-ns" name="FNAME" id="mce-FNAME" placeholder="Twoje imię" />
+                <input className="mb2 f6 f5-l input-reset bn fl black-80 bg-white pa3 w-100 w-50-m w-50-l br2-ns br--right-ns" name="EMAIL" id="mce-EMAIL" placeholder="Twój adres e-mail" required />
                 <div style={{position: 'absolute', left: '-5000px'}}><input type="text" name="b_cd9534d13c2fcd4e20e32977c_55b16eeb45" tabindex="-1" value="" /></div>
                 <input className="f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black white pointer w-100 w-25-m w-20-l br2-ns br--right-ns" type="submit" value="Subskrybuj" />
               </div>
